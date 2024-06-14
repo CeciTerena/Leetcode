@@ -21,4 +21,33 @@ public class _3038Test {
         assertEquals(1, solution1.maxOperations(nums));
     }
 
+    @Test
+    public void test2() {
+        int[] nums = null;
+        assertEquals(0, solution1.maxOperations(nums));
+    }
+
+    @Test
+    public void test3() {
+        int[] nums = new int[]{1};
+        assertEquals(0, solution1.maxOperations(nums));
+    }
+
+    @Test
+    public void test4() {
+        int[] nums = new int[]{1, 2, 2, 3, 3, 4};
+        assertEquals(1, solution1.maxOperations(nums));
+    }
+
+    @Test
+    public void test5() {
+        int[] nums = new int[]{2, 2, 1, 3};
+        assertEquals(2, solution1.maxOperations(nums));
+    }
+
+    @Test
+    public void test7() {
+        int[] nums = new int[]{5, 5, 5, 5, 5, 5};
+        assertEquals(3, solution1.maxOperations(nums));
+    }
 }
