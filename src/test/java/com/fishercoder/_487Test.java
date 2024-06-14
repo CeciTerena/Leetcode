@@ -153,4 +153,11 @@ public class _487Test {
         assertEquals(expected, soution1.findMaxConsecutiveOnes(nums));
     }
 
+    @Test
+    public void Ceciliatest() {
+        nums = new int[]{1, 0, 0, 1, 1, 0, 1};
+        expected = 4;
+        actual = soution2.findMaxConsecutiveOnes(nums);
+        assertEquals(expected, actual);
+    }
 }
