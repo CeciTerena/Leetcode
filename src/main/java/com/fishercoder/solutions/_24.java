@@ -39,8 +39,7 @@ public class _24 {
                 if (second == null) {
                     flag2 = true;
                     break;
-                }
-                else {
+                } else {
                     flag3 = true;
                     third = head.next.next;
                     second.next = first;
