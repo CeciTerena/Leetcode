@@ -18,4 +18,9 @@ public class _58Test {
     public void test1() {
         assertEquals(5, solution1.lengthOfLastWord("Hello World"));
     }
+
+    @Test
+    public void CeciliaTest() {
+        assertEquals(0, solution1.lengthOfLastWord(null));
+    }
 }
