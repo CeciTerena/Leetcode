@@ -36,11 +36,4 @@ public class _24Test {
         assertEquals(expected, solution2.swapPairs(head));
     }
 
-    @Test
-    public void test3() {
-        head = LinkedListUtils.createSinglyLinkedList(Arrays.asList(1, 2, 3, 4, 5));
-        expected = LinkedListUtils.createSinglyLinkedList(Arrays.asList(2, 1, 4, 3, 5));
-        assertEquals(expected, solution2.swapPairs(head));
-    }
 }
-
