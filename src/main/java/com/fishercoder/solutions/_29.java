@@ -1,8 +1,30 @@
 package com.fishercoder.solutions;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class _29 {
 
     public static class Solution1 {
+
+        private static Map<String, Boolean> branchCoverage = new HashMap<>();
+
+        static {
+            branchCoverage.put("flag1", false);
+            branchCoverage.put("flag2", false);
+            branchCoverage.put("flag3", false);
+            branchCoverage.put("flag4", false);
+            branchCoverage.put("flag5", false);
+            branchCoverage.put("flag6", false);
+            branchCoverage.put("flag7", false);
+        }
+
+        public void printCoverage() {
+            for (Map.Entry<String, Boolean> entry : branchCoverage.entrySet()) {
+                System.out.println(entry.getKey() + " was " + (entry.getValue() ? "hit" : "not hit"));
+            }
+        }
+
         /**
          * credit: https://leetcode.com/problems/divide-two-integers/solution/ solution 1
          * <p>
@@ -16,29 +38,37 @@ public class _29 {
          * Space: O(1)
          */
         public int divide(int dividend, int divisor) {
-            if (dividend == Integer.MIN_VALUE && divisor == -1) {
+            if (dividend == Integer.MIN_VALUE && divisor == -1) { //1
+                branchCoverage.put("flag1", true);
                 return Integer.MAX_VALUE;
             }
             int negativeCount = 0;
-            if (dividend < 0) {
+            if (dividend < 0) {  //2
+                branchCoverage.put("flag2", true);
                 negativeCount++;
-            } else {
+            } else { //3
+                branchCoverage.put("flag3", true);
                 dividend = -dividend;
             }
-            if (divisor < 0) {
+            if (divisor < 0) { //4
+                branchCoverage.put("flag4", true);
                 negativeCount++;
-            } else {
+            } else { //5
+                branchCoverage.put("flag5", true);
                 divisor = -divisor;
             }
 
             int quotient = 0;
-            while (dividend <= divisor) {
+            while (dividend <= divisor) { //6
+                branchCoverage.put("flag6", true);
                 dividend -= divisor;
                 quotient++;
             }
-            if (negativeCount == 1) {
+            if (negativeCount == 1) { //7
+                branchCoverage.put("flag7", true);
                 quotient = -quotient;
             }
+            printCoverage();
             return quotient;
         }
     }
