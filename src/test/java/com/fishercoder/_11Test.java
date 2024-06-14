@@ -26,4 +26,10 @@ public class _11Test {
         assertEquals(expected, solution2.maxArea(height));
     }
 
+    @Test
+    public void test2() {
+        height = new int[]{1, 2, 4, 3};
+        expected = 4;
+        assertEquals(expected, solution2.maxArea(height));
+    }
 }
