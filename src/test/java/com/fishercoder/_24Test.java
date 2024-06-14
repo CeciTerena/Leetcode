@@ -43,3 +43,4 @@ public class _24Test {
         assertEquals(expected, solution2.swapPairs(head));
     }
 }
+
