@@ -14,6 +14,7 @@ public class _58 {
         public int lengthOfLastWord(String s) {
             if (s == null || s.length() == 0) {
                 branchCoverage.put("flag1", true);
+                printCoverage();
                 return 0;
             }
             s = s.trim();
