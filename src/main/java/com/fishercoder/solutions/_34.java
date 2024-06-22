@@ -1,6 +1,21 @@
 package com.fishercoder.solutions;
+import java.util.HashMap;
+import java.util.Map;
 
 public class _34 {
+    private static Map<String, Boolean> branchCoverage = new HashMap<>();
+
+    static {
+        branchCoverage.put("flag1", false);
+        branchCoverage.put("flag2", false);
+        branchCoverage.put("flag3", false);
+        branchCoverage.put("flag4", false);
+        branchCoverage.put("flag5", false);
+        branchCoverage.put("flag6", false);
+        branchCoverage.put("flag7", false);
+        branchCoverage.put("flag8", false);
+        branchCoverage.put("flag9", false);
+    }
 
     public static class Solution1 {
         public int[] searchRange(int[] nums, int target) {
@@ -54,35 +69,52 @@ public class _34 {
         public int[] searchRange(int[] nums, int target) {
             int[] result = new int[]{-1, -1};
             if (nums == null || nums.length == 0) {
+                branchCoverage.put("flag1", true);
                 return result;
             }
             if (nums[0] > target) {
+                branchCoverage.put("flag2", true);
                 return result;
             }
             if (nums[nums.length - 1] < target) {
+                branchCoverage.put("flag3", true);
                 return result;
             }
             int left = 0;
             int right = nums.length - 1;
             while (left <= right) {
+                branchCoverage.put("flag4", true);
                 int mid = left + (right - left) / 2;
                 if (nums[mid] == target) {
-                    while (mid - 1 >= 0 && nums[mid] == nums[mid - 1]) {
+                    branchCoverage.put("flag5", true);
+                    while (mid - 1 >= 0 && nums[mid - 1] == nums[mid]) {
+                        branchCoverage.put("flag6", true);
                         mid--;
                     }
                     result[0] = mid;
                     while (mid + 1 < nums.length && nums[mid] == nums[mid + 1]) {
+                        branchCoverage.put("flag7", true);
                         mid++;
                     }
                     result[1] = mid;
+                    printCoverage();
                     return result;
                 } else if (nums[mid] > target) {
+                    branchCoverage.put("flag8", true);
                     right = mid - 1;
                 } else {
+                    branchCoverage.put("flag9", true);
                     left = mid + 1;
                 }
             }
+            printCoverage();
             return result;
+        }
+    }
+
+    public static void printCoverage() {
+        for (Map.Entry<String, Boolean> entry : branchCoverage.entrySet()) {
+            System.out.println(entry.getKey() + " was " + (entry.getValue() ? "hit" : "not hit"));
         }
     }
 
