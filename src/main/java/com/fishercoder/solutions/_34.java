@@ -10,6 +10,7 @@ public class _34 {
         branchCoverage.put("flag2", false);
         branchCoverage.put("flag3", false);
         branchCoverage.put("flag4", false);
+
         branchCoverage.put("flag5", false);
         branchCoverage.put("flag6", false);
         branchCoverage.put("flag7", false);
