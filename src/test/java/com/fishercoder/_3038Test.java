@@ -46,7 +46,7 @@ public class _3038Test {
     }
 
     @Test
-    public void test7() {
+    public void test6() {
         int[] nums = new int[]{5, 5, 5, 5, 5, 5};
         assertEquals(3, solution1.maxOperations(nums));
     }

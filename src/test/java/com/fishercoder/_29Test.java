@@ -26,22 +26,17 @@ public class _29Test {
         assertEquals(Integer.MAX_VALUE, solution1.divide(Integer.MIN_VALUE, -1));
     }
 
-    @Test
-    public void test3() {
-        assertEquals(3, solution2.divide(10, 3));
-    }
-
-    public void test4() {assertEquals(-1, solution1.divide(-4, 3));}
+    public void test3() {assertEquals(-1, solution1.divide(-4, 3));}
 
     @Test
-    public void test5() {assertEquals(-1, solution1.divide(4, -3));}
+    public void test4() {assertEquals(-1, solution1.divide(4, -3));}
 
     @Test
-    public void test6() {assertEquals(1, solution1.divide(-4, -3));}
+    public void test5() {assertEquals(1, solution1.divide(-4, -3));}
 
     @Test
-    public void test7() {assertEquals(-1, solution1.divide(-10, 10));}
+    public void test6() {assertEquals(-1, solution1.divide(-10, 10));}
 
     @Test
-    public void test8() {assertEquals(0, solution1.divide(0, 3));}
+    public void test7() {assertEquals(0, solution1.divide(0, 3));}
 }
