@@ -74,6 +74,13 @@ public class _3 {
         }
     }
 
+    private static Map<String, Boolean> branchCoverage = new HashMap<>();
+
+    static {
+        branchCoverage.put("flag1", false);
+        branchCoverage.put("flag2", false);
+    }
+
     public static class Solution4 {
         /**
          * Sliding Window Optimized
@@ -82,19 +89,30 @@ public class _3 {
          */
         public int lengthOfLongestSubstring(String s) {
             if (s.length() == 0) {
+                branchCoverage.put("flag1", true);
                 return 0;
             }
             int max = 0;
             int[] index = new int[128];
-            /**Try to extend the range (i, j)*/
             for (int i = 0, j = 0; j < s.length(); j++) {
+                branchCoverage.put("flag2", true);
                 i = Math.max(index[s.charAt(j)], i);
                 max = Math.max(max, j - i + 1);
                 index[s.charAt(j)] = j + 1;
             }
+            printCoverage();
             return max;
         }
+
+        public static void printCoverage() {
+            for (Map.Entry<String, Boolean> entry : branchCoverage.entrySet()) {
+                System.out.println(entry.getKey() + " was " + (entry.getValue() ? "hit" : "not hit"));
+            }
+        }
+
     }
+
+
 
     public static class Solution5 {
         /**
