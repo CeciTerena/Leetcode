@@ -34,4 +34,28 @@ public class _34Test {
         assertArrayEquals(new int[]{-1, -1}, solution2.searchRange(nums, 0));
         assertArrayEquals(new int[]{-1, -1}, solution3.searchRange(nums, 0));
     }
+
+    @Test
+    public void IrinaTest3() {
+        nums = new int[]{1, 2, 3};
+        assertArrayEquals(new int[]{-1, -1}, solution2.searchRange(nums, 0)); // hits flag2
+    }
+
+    @Test
+    public void IrinaTest4() {
+        nums = new int[]{1, 2, 3};
+        assertArrayEquals(new int[]{-1, -1}, solution2.searchRange(nums, 4)); // hits flag3
+    }
+
+    @Test
+    public void IrinaTest5() {
+        nums = new int[]{5, 7, 7, 8, 8, 10};
+        assertArrayEquals(new int[]{3, 4}, solution2.searchRange(nums, 8)); // hits flag4, flag5, flag6, flag7
+    }
+
+    @Test
+    public void IrinaTest6() {
+        nums = new int[]{5, 7, 7, 8, 8, 10};
+        assertArrayEquals(new int[]{-1, -1}, solution2.searchRange(nums, 6)); // hits flag4, flag8, flag9
+    }
 }
