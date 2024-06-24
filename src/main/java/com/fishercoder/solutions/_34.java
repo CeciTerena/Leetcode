@@ -98,7 +98,6 @@ public class _34 {
                         mid++;
                     }
                     result[1] = mid;
-                    printCoverage();
                     return result;
                 } else if (nums[mid] > target) {
                     branchCoverage.put("flag8", true);
