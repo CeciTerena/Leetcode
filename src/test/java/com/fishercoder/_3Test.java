@@ -38,4 +38,14 @@ public class _3Test {
         assertEquals(expected, solution6.lengthOfLongestSubstring(s));
     }
 
+    @Test
+    public void IrinaTest() {
+        assertEquals(0, solution1.lengthOfLongestSubstring(""));
+        assertEquals(0, solution2.lengthOfLongestSubstring(""));
+        assertEquals(0, solution3.lengthOfLongestSubstring(""));
+        assertEquals(0, solution4.lengthOfLongestSubstring(""));
+        assertEquals(0, solution5.lengthOfLongestSubstring(""));
+        assertEquals(0, solution6.lengthOfLongestSubstring(""));
+    }
+
 }
