@@ -1,3 +1,5 @@
+# SEP-assignment-1
+
 Report for Assignment 1
 
 Group 2
